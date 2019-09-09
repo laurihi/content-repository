@@ -1,0 +1,23 @@
+
+server.port: 0
+
+spring:
+  application:
+    name: content-repository
+    instance: content-repository-${random.value}
+
+eureka:
+  instance:
+    instance-id: ${spring.application.instance}
+    leaseRenewalIntervalInSeconds: 10
+
+
+
+
+
+######### These server only the actuator endpoints, not used for any service discovery
+info.app:
+  name: Content Repository
+  description: Repository and rest endpoint for content related services
+  version: 1.0
+  instance: ${spring.application.instance}
